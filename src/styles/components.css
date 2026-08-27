@@ -1,0 +1,419 @@
+/* ==========================================================================
+   RAZA ARSHAD ARCHITECTURAL PORTFOLIO — COMPONENTS & CASE STUDY VIEW
+   Matches Panel 3 (Top-Right Board) from the reference image.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   01. Full-Page Project Case Study View / Modal (Panel 3)
+   -------------------------------------------------------------------------- */
+.case-study-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: var(--bg-dark-board);
+  color: var(--text-light);
+  z-index: 2000;
+  overflow-y: auto;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s var(--ease-editorial);
+}
+
+.case-study-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.case-study-container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 32px 48px 80px 48px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  .case-study-container {
+    padding: 20px 24px 60px 24px;
+  }
+}
+
+/* Case Study Top Bar */
+.case-study-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--border-dark);
+  margin-bottom: 48px;
+}
+
+.back-to-projects-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 0.725rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  color: var(--text-light-muted);
+  text-transform: uppercase;
+  transition: color var(--transition-fast);
+}
+
+.back-to-projects-btn:hover {
+  color: var(--text-light);
+}
+
+.case-study-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .case-study-nav-links {
+    display: none;
+  }
+}
+
+.case-study-nav-links a {
+  font-family: var(--font-sans);
+  font-size: 0.725rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  color: var(--text-light-muted);
+  text-transform: uppercase;
+}
+
+/* Case Study Main Grid (Split Left Info / Right Media & Idea) */
+.case-study-content-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 64px;
+  align-items: start;
+}
+
+@media (max-width: 992px) {
+  .case-study-content-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+/* Left Column: Project Info & Spec Table */
+.cs-left-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.cs-project-num {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--text-light-muted);
+  margin-bottom: 8px;
+}
+
+.cs-project-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 4vw, 3.75rem);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--text-light);
+  line-height: 1.05;
+  margin-bottom: 6px;
+}
+
+.cs-project-type {
+  font-family: var(--font-sans);
+  font-size: 0.725rem;
+  letter-spacing: 0.18em;
+  color: var(--text-light-muted);
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+
+/* Technical Metadata Table */
+.cs-spec-table {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 48px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--border-dark);
+}
+
+.cs-spec-row {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 16px;
+  font-family: var(--font-sans);
+  font-size: 0.775rem;
+}
+
+.cs-spec-k {
+  color: var(--text-light-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.cs-spec-v {
+  color: var(--text-light-secondary);
+  line-height: 1.5;
+}
+
+/* Narrative Index Nav */
+.cs-index-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cs-index-item {
+  font-family: var(--font-sans);
+  font-size: 0.725rem;
+  letter-spacing: 0.16em;
+  color: var(--text-light-muted);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.cs-index-item:hover, .cs-index-item.active {
+  color: var(--text-light);
+}
+
+/* Right Column: Hero Render, Gallery & The Idea */
+.cs-right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.cs-main-render-wrap {
+  overflow: hidden;
+  border: 1px solid var(--border-dark);
+}
+
+.cs-main-render-img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .cs-main-render-img {
+    height: 320px;
+  }
+}
+
+/* Thumbnails Strip (CAD Plans, Elevations, Perspectives) */
+.cs-thumbnails-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.cs-thumb-box {
+  height: 90px;
+  background-color: var(--bg-dark-card);
+  border: 1px solid var(--border-dark);
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color var(--transition-fast);
+}
+
+.cs-thumb-box:hover {
+  border-color: var(--accent-blue);
+}
+
+.cs-thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cs-thumb-svg {
+  width: 100%;
+  height: 100%;
+  padding: 8px;
+}
+
+/* The Idea Editorial Card (Bottom Right in Panel 3) */
+.cs-idea-card {
+  background-color: var(--bg-paper);
+  color: var(--text-dark);
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .cs-idea-card {
+    grid-template-columns: 1fr;
+    padding: 24px;
+    gap: 24px;
+  }
+}
+
+.cs-idea-title {
+  font-family: var(--font-serif);
+  font-size: 1.85rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--text-dark);
+  margin-bottom: 16px;
+}
+
+.cs-idea-text {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  color: var(--text-dark-secondary);
+  line-height: 1.7;
+}
+
+.cs-idea-sketch-wrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cs-idea-sketch-svg {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+}
+
+/* --------------------------------------------------------------------------
+   02. Direct Conversation / Inquiry Modal Dialog
+   -------------------------------------------------------------------------- */
+.inquiry-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 18, 19, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 3000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.inquiry-modal-backdrop.open {
+  display: flex;
+  opacity: 1;
+}
+
+.inquiry-dialog {
+  background-color: var(--bg-paper);
+  color: var(--text-dark);
+  max-width: 540px;
+  width: 100%;
+  padding: 40px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+@media (max-width: 640px) {
+  .inquiry-dialog {
+    padding: 24px;
+  }
+}
+
+.inquiry-dialog-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-paper);
+}
+
+.inquiry-dialog-header h3 {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+}
+
+.close-inq-btn {
+  font-size: 1.1rem;
+  color: var(--text-dark-muted);
+}
+
+.close-inq-btn:hover {
+  color: var(--text-dark);
+}
+
+.inquiry-form-body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.inq-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.inq-field label {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  color: var(--text-dark-muted);
+}
+
+.inq-field input, .inq-field select, .inq-field textarea {
+  width: 100%;
+  padding: 10px 12px;
+  background-color: var(--bg-paper-surface);
+  border: 1px solid var(--border-paper);
+  color: var(--text-dark);
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.inq-field input:focus, .inq-field select:focus, .inq-field textarea:focus {
+  border-color: #3562bb;
+}
+
+.submit-inq-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background-color: var(--text-dark);
+  color: var(--bg-paper);
+  font-family: var(--font-sans);
+  font-size: 0.725rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  margin-top: 8px;
+  transition: opacity var(--transition-fast);
+}
+
+.submit-inq-btn:hover {
+  opacity: 0.85;
+}
+
+.inq-success-msg {
+  display: none;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  color: #27ae60;
+  padding: 10px;
+  background-color: #eafaf1;
+  border: 1px solid #a3e4d7;
+  text-align: center;
+}

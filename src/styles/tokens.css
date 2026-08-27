@@ -1,0 +1,51 @@
+/* ==========================================================================
+   RAZA ARSHAD ARCHITECTURAL PORTFOLIO — DESIGN TOKENS
+   ========================================================================== */
+
+:root {
+  /* Warm Ivory / Architectural Paper Palette (Matches Reference Exactly) */
+  --bg-paper: #f5f3ec;
+  --bg-paper-surface: #efece4;
+  --bg-paper-card: #e8e4db;
+  --border-paper: #dfd9cd;
+  --border-paper-light: #eae5da;
+
+  /* Typography Colors on Paper */
+  --text-dark: #161615;
+  --text-dark-secondary: #5a5853;
+  --text-dark-muted: #8e8b83;
+  --text-dark-faint: #b8b5ab;
+
+  /* Matte Charcoal / Black Palette */
+  --bg-dark-board: #111213;
+  --bg-dark-surface: #17181a;
+  --bg-dark-card: #1c1d20;
+  --border-dark: #26282b;
+  --border-dark-subtle: #1e2023;
+
+  /* Typography Colors on Dark */
+  --text-light: #f5f3ec;
+  --text-light-secondary: #9e9c94;
+  --text-light-muted: #666560;
+
+  /* Active Indicator Blue */
+  --accent-blue: #3d6be2;
+  --accent-blue-faint: rgba(61, 107, 226, 0.12);
+
+  /* Typography Families */
+  --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-signature: 'Caveat', cursive;
+
+  /* Spacing */
+  --space-unit: 8px;
+  --container-max: 1480px;
+
+  /* Luxury Easing Curves for Buttery Smooth Motion */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-smooth: cubic-bezier(0.65, 0, 0.35, 1);
+  --transition-fast: 0.25s var(--ease-out-expo);
+  --transition-normal: 0.5s var(--ease-out-expo);
+  --transition-smooth: 0.85s var(--ease-out-expo);
+  --transition-slow: 1.2s var(--ease-out-expo);
+}
